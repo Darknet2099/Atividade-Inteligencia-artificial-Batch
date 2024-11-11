@@ -1,0 +1,137 @@
+@echo off
+cls
+
+:menu
+cls
+color 2
+echo             Programando como um raiz!!!
+echo ==============================================
+echo *1 - Mostre os arquivos que está na pasta*
+echo *2 - Mostre as informações do sistema onde estou*
+echo *3 - Sair*
+echo ==============================================
+set /p opcao= Escolha uma opcao:
+echo ==============================================
+
+if %opcao% equ 1 goto opcao1
+if %opcao% equ 2 goto opcao2
+if %opcao% equ 3 goto opcao3
+if %opcao% equ 4 goto opcao4
+
+:opcao1
+cls
+dir
+echo ---------
+echo *arquivos lidos*
+echo ---------
+pause
+goto menu
+
+:opcao2
+cls
+systeminfo
+echo ---------
+echo *este é o sistema*
+echo ---------
+pause
+goto menu
+
+:opcao3
+cls
+exit
+
+:opcao4
+cls
+echo ---------
+echo *Opção Inválida*
+echo ---------
+pause
+goto menu
+
+
+
+Aqui estão os comentários reorganizados por tópicos:
+
+1. Configurações iniciais
+
+@echo off
++Desativa a exibição dos comandos na tela, mostrando apenas as saídas do que for executado.
+
+cls
++Limpa a tela do terminal, removendo qualquer conteúdo anterior.
+
+2. Menu principal
+
+:menu
++Define o rótulo menu, para que o fluxo do programa possa retornar a esse ponto.
+
+color 2
++Define a cor do texto no terminal para verde.
+
+echo             Programando como um raiz!!!
+echo ==============================================
+echo *1 - Mostre os arquivos que está na pasta*
+echo *2 - Mostre as informações do sistema onde estou*
+echo *3 - Sair*
+echo ==============================================
++Exibe um menu com três opções: listar arquivos da pasta, mostrar informações do sistema e sair.
+
+set /p opcao= Escolha uma opcao:
++Solicita ao usuário uma opção e armazena a entrada na variável opcao.
+
+3. Controle de fluxo
+
+if %opcao% equ 1 goto opcao1
+if %opcao% equ 2 goto opcao2
+if %opcao% equ 3 goto opcao3
+if %opcao% equ 4 goto opcao4
++Verifica o valor de opcao e redireciona o programa para o rótulo correspondente, dependendo da escolha do usuário.
+
+4. Opções do menu
+Opção 1: Listar arquivos
+
+:opcao1
++Define o rótulo opcao1, que representa o código executado se o usuário escolher a opção 1.
+
+cls
+dir
+echo ---------
+echo *arquivos lidos*
+echo ---------
+pause
+goto menu
++Limpa a tela, exibe uma lista de arquivos e pastas no diretório atual, e retorna ao menu após o usuário pressionar uma tecla.
+Opção 2: Exibir informações do sistema
+
+:opcao2
++Define o rótulo opcao2, que representa o código executado se o usuário escolher a opção 2.
+
+cls
+systeminfo
+echo ---------
+echo *este é o sistema*
+echo ---------
+pause
+goto menu
++Limpa a tela, exibe informações do sistema, e retorna ao menu após o usuário pressionar uma tecla.
+Opção 3: Sair
+
+:opcao3
++Define o rótulo opcao3, que representa o código executado se o usuário escolher a opção 3.
+
+cls
+exit
++Limpa a tela e encerra o programa.
+Opção inválida
+
+:opcao4
++Define o rótulo opcao4, executado quando o usuário insere uma opção inválida.
+batch
+Copiar código
+cls
+echo ---------
+echo *Opção Inválida*
+echo ---------
+pause
+goto menu
++Exibe uma mensagem de "Opção Inválida", pausa o programa, e retorna ao menu.
