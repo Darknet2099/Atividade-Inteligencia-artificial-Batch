@@ -1,0 +1,75 @@
+Nome do Log: System
+Fonte: Microsoft-Windows-UserModePowerService
+Data: 16/11/2017 19:26:45
+Identificação do Evento:12
+Categoria da Tarefa:(10)
+Nível: Informações
+Palavras-chave:
+Usuário: SISTEMA
+Computador: HOME
+Descrição:
+O processo C:\Program Files\AVAST Software\Avast\AvastSvc.exe (ID do processo:1152) redefiniu o esquema de política de {381b4222-f694-41f0-9685-
+ff5bb260df2e} para {381b4222-f694-41f0-9685-ff5bb260df2e}
+XML de Evento:
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+<System>
+<Provider Name="Microsoft-Windows-UserModePowerService" Guid="{CE8DEE0B-D539-4000-B0F8-77BED049C590}" />
+<EventID>12</EventID>
+<Version>0</Version>
+<Level>4</Level>
+<Task>10</Task>
+<Opcode>0</Opcode>
+<Keywords>0x4000000000000000</Keywords>
+<TimeCreated SystemTime="2017-11-16T21:26:45.764957000Z" />
+<EventRecordID>196237</EventRecordID>
+<Correlation />
+<Execution ProcessID="820" ThreadID="912" />
+<Channel>System</Channel>
+<Computer>HOME</Computer>
+<Security UserID="S-1-5-18" />
+</System>
+<EventData>
+<Data Name="ProcessPath">C:\Program Files\AVAST Software\Avast\AvastSvc.exe</Data>
+<Data Name="ProcessPid">1152</Data>
+<Data Name="OldSchemeGuid">{381B4222-F694-41F0-9685-FF5BB260DF2E}</Data>
+<Data Name="NewSchemeGuid">{381B4222-F694-41F0-9685-FF5BB260DF2E}</Data>
+</EventData>
+</Event>
+
+
+O que o log está dizendo:
+
+O registro no Event Viewer indica que um evento específico ocorreu no seu sistema operacional Windows. Vamos desmembrar as informações para entender melhor o que aconteceu:
+
+Nome do Log: System: O evento foi registrado no log do sistema, que é um dos logs mais importantes do Windows, pois armazena informações sobre o funcionamento geral do sistema operacional.
+Fonte: Microsoft-Windows-UserModePowerService: O evento foi gerado pelo serviço de energia do Windows, que gerencia as configurações de energia do sistema.
+Descrição: A parte mais importante do log indica que um processo específico, o AvastSvc.exe (que pertence ao antivírus Avast), redefiniu um esquema de política de energia.
+O que significa redefinir um esquema de política de energia?
+
+Os esquemas de política de energia definem como o sistema gerencia o consumo de energia. Eles controlam configurações como:
+
+Desligamento de tela: Quanto tempo o sistema espera antes de desligar a tela.
+Hibernação: Quando o sistema deve entrar em hibernação.
+Desligamento: Quando o sistema deve se desligar automaticamente.
+Desempenho: Se o sistema deve priorizar o desempenho ou a economia de energia.
+O que pode ter causado essa redefinição?
+
+Existem algumas possíveis razões para o Avast ter redefinido o esquema de política de energia:
+
+Atualização do Avast: Uma atualização do antivírus pode ter incluído alterações nas configurações de energia para otimizar o desempenho ou a detecção de ameaças.
+Configuração personalizada: Você ou o Avast podem ter configurado o antivírus para ajustar automaticamente as configurações de energia em determinadas situações, como durante uma varredura completa do sistema.
+Conflitos com outros softwares: É possível que outro software instalado no seu sistema esteja interferindo nas configurações de energia e o Avast esteja tentando corrigir essa interferência.
+É preciso se preocupar?
+
+Em geral, essa mensagem não é motivo para alarme. O Avast está apenas ajustando as configurações de energia do seu sistema para garantir um melhor desempenho ou segurança. No entanto, se você notar alguma mudança inesperada no comportamento do seu computador após essa alteração, pode ser interessante verificar as configurações de energia do Avast e do Windows.
+
+O que você pode fazer?
+
+Verificar as configurações de energia do Avast: Abra o antivírus Avast e procure por opções relacionadas a configurações de energia ou desempenho. Verifique se há alguma configuração que possa estar causando a redefinição do esquema de política.
+Verificar as configurações de energia do Windows: Acesse o Painel de Controle e procure por "Opções de energia". Verifique se o esquema de energia ativo é o que você deseja.
+Ignorar a mensagem: Se você não estiver notando nenhum problema no desempenho do seu computador, pode simplesmente ignorar a mensagem do Event Viewer.
+Observação: O GUID {381b4222-f694-41f0-9685-ff5bb260df2e} presente na descrição do evento é um identificador único para o esquema de política de energia que foi redefinido.
+
+Em resumo:
+
+O log indica que o antivírus Avast fez uma alteração nas configurações de energia do seu sistema. Essa alteração é geralmente inofensiva e visa otimizar o desempenho ou a segurança do seu computador. No entanto, se você tiver alguma preocupação, pode verificar as configurações de energia do Avast e do Windows.
