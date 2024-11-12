@@ -1,0 +1,85 @@
+ - <Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+- <System>
+  <Provider Name="SideBySide" /> 
+  <EventID Qualifiers="49409">78</EventID> 
+  <Version>0</Version> 
+  <Level>2</Level> 
+  <Task>0</Task> 
+  <Opcode>0</Opcode> 
+  <Keywords>0x80000000000000</Keywords> 
+  <TimeCreated SystemTime="2024-11-12T00:29:01.5455932Z" /> 
+  <EventRecordID>21734</EventRecordID> 
+  <Correlation /> 
+  <Execution ProcessID="928" ThreadID="0" /> 
+  <Channel>Application</Channel> 
+  <Computer>DESKTOP-QFV394F</Computer> 
+  <Security /> 
+  </System>
+- <EventData>
+  <Data>C:\Windows\WinSxS\manifests\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.4391_none_6ec30a5687fc679c.manifest</Data> 
+  <Data>C:\Windows\WinSxS\manifests\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.4391_none_2715d37f73803e96.manifest</Data> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data>C:\Users\Eduardo\Downloads\Autoruns\Autoruns.exe</Data> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  <Data /> 
+  </EventData>
+  </Event>
+
+Análise do log
+Fonte e Evento
+
+Fonte (Provider): SideBySide
+ID do Evento: 78
+Esse evento 78 do SideBySide é comum em situações onde um aplicativo requer uma versão específica de um componente ou biblioteca que está ausente ou em conflito.
+Nível e Qualificadores
+
+Nível: 2, que indica um aviso (Warning).
+Qualificadores: 49409
+Esse código específico fornece informações adicionais sobre o tipo de erro, embora não seja sempre necessário para a resolução.
+Data e Hora do Evento
+
+Data: 12/11/2024
+Hora: 00:29:01 (UTC)
+Esse é o momento em que o evento foi registrado.
+Detalhes do Evento
+
+Caminho dos Manifests:
+C:\Windows\WinSxS\manifests\x86_microsoft.windows.common-controls_...
+C:\Windows\WinSxS\manifests\amd64_microsoft.windows.common-controls_...
+Esses arquivos .manifest na pasta WinSxS (Windows Side-by-Side) especificam diferentes versões de bibliotecas de controles comuns do Windows. Esse problema indica que o aplicativo em questão está tentando acessar ou carregar uma versão específica dos controles comuns que não estão adequadamente registrados ou disponíveis.
+Aplicativo Iniciado
+
+Caminho do aplicativo: C:\Users\Eduardo\Downloads\Autoruns\Autoruns.exe
+O aplicativo Autoruns.exe é a origem deste problema, e ele pode estar solicitando uma biblioteca de controles que não corresponde ao que está instalado.
+Interpretação
+Esse erro do Side-by-Side indica que o Autoruns.exe requer uma versão específica do componente microsoft.windows.common-controls que não está configurada corretamente ou está faltando. Esse tipo de erro pode ocorrer, por exemplo, quando:
+
+Faltam bibliotecas de tempo de execução necessárias, como o Microsoft Visual C++ Redistributable.
+Há conflitos de versões entre as bibliotecas instaladas e as exigidas pelo aplicativo.
+Soluções recomendadas
+Reinstalar Microsoft Visual C++ Redistributables:
+
+Baixe e instale todas as versões do Visual C++ Redistributable (x86 e x64) para garantir que o sistema tenha as bibliotecas necessárias. Essas dependências geralmente corrigem problemas de versões de controle comuns.
+Atualizar o Windows:
+
+Verifique se há atualizações disponíveis para o Windows, pois algumas atualizações incluem componentes de biblioteca atualizados.
+Reinstalar ou atualizar o Autoruns.exe:
+
+Baixe a versão mais recente do Autoruns para garantir que seja compatível com sua versão do Windows e com as dependências disponíveis no sistema.
+Registro manual das bibliotecas (se o problema persistir):
+
+Embora mais avançado, você pode usar o comando sfc /scannow para verificar e corrigir arquivos de sistema corrompidos, o que pode resolver o problema de registro dessas bibliotecas.
