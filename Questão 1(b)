@@ -1,0 +1,50 @@
+@echo off
+cls
+
+:menu
+cls
+color 7
+echo ===============================
+echo            Menu Principal       
+echo ===============================
+echo *0 - Sair*
+echo *1 - Abrir Opera GX no UOL*
+echo *2 - Abrir Bloco de Notas*
+echo *3 - Mudar cor para Amarelo*
+echo *4 - Listar tarefas em execução*
+echo ===============================
+set /p opcao= Escolha uma opcao:
+
+if %opcao% equ 0 goto sair
+if %opcao% equ 1 goto abrir_uol
+if %opcao% equ 2 goto abrir_notepad
+if %opcao% equ 3 goto mudar_cor
+if %opcao% equ 4 goto listar_tarefas
+
+:invalida
+cls
+echo ===============================
+echo *Opção Inválida*
+echo ===============================
+pause
+goto menu
+
+:sair
+cls
+exit
+
+:abrir_uol
+start "" "C:\Users\<seu-usuario>\AppData\Local\Programs\Opera GX\launcher.exe" "https://www.uol.com.br"
+if errorlevel 1 (
+    echo Opera GX não encontrado ou falha ao abrir.
+    pause
+)
+goto menu
+
+:abrir_notepad
+start notepad
+goto menu
+
+:mudar_cor
+color 0E
+goto menu
